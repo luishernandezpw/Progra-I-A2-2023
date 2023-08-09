@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnProcesar = new System.Windows.Forms.Button();
-            this.lblEdad = new System.Windows.Forms.Label();
-            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.lblNTablaMultiplicar = new System.Windows.Forms.Label();
+            this.txtNTablaMultiplicar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnProcesar
@@ -44,29 +44,29 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
-            // lblEdad
+            // lblNTablaMultiplicar
             // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(81, 44);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(35, 13);
-            this.lblEdad.TabIndex = 1;
-            this.lblEdad.Text = "Edad:";
+            this.lblNTablaMultiplicar.AutoSize = true;
+            this.lblNTablaMultiplicar.Location = new System.Drawing.Point(29, 44);
+            this.lblNTablaMultiplicar.Name = "lblNTablaMultiplicar";
+            this.lblNTablaMultiplicar.Size = new System.Drawing.Size(87, 13);
+            this.lblNTablaMultiplicar.TabIndex = 1;
+            this.lblNTablaMultiplicar.Text = "Tabla Multiplicar:";
             // 
-            // txtEdad
+            // txtNTablaMultiplicar
             // 
-            this.txtEdad.Location = new System.Drawing.Point(122, 41);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(100, 20);
-            this.txtEdad.TabIndex = 2;
+            this.txtNTablaMultiplicar.Location = new System.Drawing.Point(122, 41);
+            this.txtNTablaMultiplicar.Name = "txtNTablaMultiplicar";
+            this.txtNTablaMultiplicar.Size = new System.Drawing.Size(100, 20);
+            this.txtNTablaMultiplicar.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 250);
-            this.Controls.Add(this.txtEdad);
-            this.Controls.Add(this.lblEdad);
+            this.Controls.Add(this.txtNTablaMultiplicar);
+            this.Controls.Add(this.lblNTablaMultiplicar);
             this.Controls.Add(this.btnProcesar);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -78,8 +78,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnProcesar;
-        private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label lblNTablaMultiplicar;
+        private System.Windows.Forms.TextBox txtNTablaMultiplicar;
     }
 }
 
