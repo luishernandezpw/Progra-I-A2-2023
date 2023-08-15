@@ -17,14 +17,20 @@ namespace ejercicios
             InitializeComponent();
         }
 
-        private void btnProcesar_Click(object sender, EventArgs e)
+        private void btnConvertirConversores_Click(object sender, EventArgs e)
         {
-            int ntabla = int.Parse(txtNTablaMultiplicar.Text);
-            String msg= "TABLA DE MULTIPLICAR DEL "+ ntabla +"\n";
-            for(int i=1; i<=10; i++){
-                msg += ntabla + "x" + i + "=" + (ntabla * i) + "\n";
-            }
-            MessageBox.Show(msg);
+            int de, a;
+            double cantidad, respuesta;
+
+            de = cboDeConversores.SelectedIndex;
+            a = cboAConversores.SelectedIndex;
+
+            cantidad = double.Parse(txtCantidadConversores.Text);
+            //Dolar,Euro,Quetzal,Lempira,Cordoba,Colon SV,Colon CR,Yenes,Rupias India,Libras Esterlinas
+            double[] monedas = {1, 0.92, 7.86, 24.62, 36.56,8.75, 535.14, 145.52, 83.32, 0.79};
+
+            respuesta = monedas[a] / monedas[de] * cantidad;
+            lblRespuestaConversores.Text = "Respuesta: " + Math.Round(respuesta, 3);
         }
     }
 }
