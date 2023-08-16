@@ -12,6 +12,13 @@ namespace ejercicios
 {
     public partial class Form1 : Form
     {
+        String[][] tiposConversores = new String [][]{
+            new String[]{"Dolar", "Euro", "Quetzal", "Lempira", "Cordoba", "Colon SV", "Colon CR", "Yenes", "Rupias India", "Libras Esterlinas"},//Monedas
+            new String[]{"Libras", "Miligramos", "Gramos", "Onzas", "Tonelada Corta"}, //Masa
+            new String[]{"Litro"}, //Volumen
+            new string[]{"Metro", "Milimetro", "Centimetro", "Pulgada", "Pies", "Varas", "Yardas", "Kilometros", "Millas" } //Longitud
+            new String[]{ }//tiempo
+         }; //Matriz dentada
         public Form1()
         {
             InitializeComponent();
@@ -27,10 +34,24 @@ namespace ejercicios
 
             cantidad = double.Parse(txtCantidadConversores.Text);
             //Dolar,Euro,Quetzal,Lempira,Cordoba,Colon SV,Colon CR,Yenes,Rupias India,Libras Esterlinas
-            double[] monedas = {1, 0.92, 7.86, 24.62, 36.56,8.75, 535.14, 145.52, 83.32, 0.79};
-
-            respuesta = monedas[a] / monedas[de] * cantidad;
+            double[][] monedas = {
+                new double[]{1, 0.92, 7.86, 24.62, 36.56, 8.75, 535.14, 145.52, 83.32, 0.79}, //Array Unidimensional
+                new double[]{}, //masa
+                new double[]{}, //volumen
+                new double[]{1, 1000, 100, 39.3701, 3.28084, 1.1963081929167, 1.0936, 0.001, 0.000621371} //longitud
+                new double[]{ } //tiempo
+            };
+            respuesta = monedas[cboTipoConversor.SelectedIndex][a] / monedas[cboTipoConversor.SelectedIndex][de] * cantidad;
             lblRespuestaConversores.Text = "Respuesta: " + Math.Round(respuesta, 3);
+        }
+
+        private void cboTipoConversor_TextChanged(object sender, EventArgs e)
+        {
+            cboDeConversores.Items.Clear();
+            cboDeConversores.Items.AddRange(tiposConversores[cboTipoConversor.SelectedIndex]);
+
+            cboAConversores.Items.Clear();
+            cboAConversores.Items.AddRange(tiposConversores[cboTipoConversor.SelectedIndex]);
         }
     }
 }
