@@ -1,6 +1,6 @@
 ﻿namespace ejercicios
 {
-    partial class Form1
+    partial class frmConverciones
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -143,11 +143,11 @@
             this.lblTipoConversor.TabIndex = 9;
             this.lblTipoConversor.Text = "TIPO:";
             // 
-            // Form1
+            // frmConverciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 479);
+            this.ClientSize = new System.Drawing.Size(494, 479);
             this.Controls.Add(this.lblTipoConversor);
             this.Controls.Add(this.cboTipoConversor);
             this.Controls.Add(this.lblRespuestaConversores);
@@ -158,8 +158,9 @@
             this.Controls.Add(this.cboDeConversores);
             this.Controls.Add(this.lblDeConversores);
             this.Controls.Add(this.btnConvertirConversores);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmConverciones";
+            this.Text = "Convertir";
+            this.Load += new System.EventHandler(this.frmConverciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
