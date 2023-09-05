@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 479);
+            this.ClientSize = new System.Drawing.Size(393, 441);
             this.Controls.Add(this.lblTipoConversor);
             this.Controls.Add(this.cboTipoConversor);
             this.Controls.Add(this.lblRespuestaConversores);
