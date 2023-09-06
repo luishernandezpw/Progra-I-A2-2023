@@ -126,7 +126,8 @@
             "Volumen",
             "Longitud",
             "Almacenamiento",
-            "Tiempo"});
+            "Tiempo",
+            "Temperatura"});
             this.cboTipoConversor.Location = new System.Drawing.Point(119, 59);
             this.cboTipoConversor.Name = "cboTipoConversor";
             this.cboTipoConversor.Size = new System.Drawing.Size(180, 21);

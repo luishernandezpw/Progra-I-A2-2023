@@ -20,7 +20,13 @@ namespace ejercicios
         private void btnConvertirConversores_Click(object sender, EventArgs e)
         {
             int de = cboDeConversores.SelectedIndex, a = cboAConversores.SelectedIndex, tipo = cboTipoConversor.SelectedIndex;
-            double cantidad = double.Parse(txtCantidadConversores.Text), respuesta= objParcial.convertir(tipo, de, a, cantidad);
+            double cantidad = double.Parse(txtCantidadConversores.Text), respuesta = 0;
+
+            if( tipo==6 ){//temperatura
+                respuesta = objParcial.convertir(de, a, cantidad);
+            }else{
+                respuesta = objParcial.convertir(tipo, de, a, cantidad);
+            }
 
             lblRespuestaConversores.Text = "Respuesta: " + Math.Round(respuesta, 3);
         }
