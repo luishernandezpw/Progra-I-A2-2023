@@ -12,49 +12,69 @@ namespace ejercicios
 {
     public partial class Form1 : Form
     {
+        Conexion objConexion = new Conexion();
+        DataSet miDs = new DataSet();
+        public int posicion =0;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void btnProcesar_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            int ntabla = int.Parse(txtNTablaMultiplicar.Text);
-            String msg= "TABLA DE MULTIPLICAR DEL "+ ntabla +"\n";
-            for(int i=1; i<=10; i++){
-                msg += ntabla + "x" + i + "=" + (ntabla * i) + "\n";
+            miDs.Clear();
+            miDs = objConexion.obtenerDatos();
+            mostrarMaterias();
+            mostrarDatosMateria();
+        }
+        private void mostrarMaterias()
+        {
+            grdDatosMaterias.DataSource = miDs.Tables["materias"].DefaultView;
+        }
+        private void mostrarDatosMateria()
+        {
+            txtCodigoMateria.Text = miDs.Tables["materias"].Rows[posicion].ItemArray[1].ToString();
+            txtNombreMateria.Text = miDs.Tables["materias"].Rows[posicion].ItemArray[2].ToString();
+            txtUvMateria.Text = miDs.Tables["materias"].Rows[posicion].ItemArray[3].ToString();
+
+            lblnRegistroMateria.Text = (posicion + 1) + " de " + miDs.Tables["materias"].Rows.Count;
+        }
+
+        private void btnSiguienteMateria_Click(object sender, EventArgs e)
+        {
+            if (posicion < miDs.Tables["materias"].Rows.Count-1){
+                posicion++;
+                mostrarDatosMateria();
+            } else{
+                MessageBox.Show("Ultimo Registro", "Registro de Materias");
             }
-            MessageBox.Show(msg);
         }
 
-        private void btnSumar_Click(object sender, EventArgs e)
+        private void btnUltimoMateria_Click(object sender, EventArgs e)
         {
-            double num1 = double.Parse(txtNum1.Text), 
-                num2 = double.Parse(txtNum2.Text), 
-                respuesta = sumar(num1, num2);
-            MessageBox.Show("Respuesta: "+ respuesta);
-
-            //Crear un programa en C# que genere la secuencia de los numeros fibonacci.
-            /*
-            0 + 1 = 1
-            1 + 0 = 1
-            1 + 1 = 2
-            2 + 1 = 3
-            3 + 2 = 5
-            5 + 3 = 8
-            8 + 5 = 13
-            13 + 8 = 21
-            21 + 13 = 34
-            34 + 21 = 55
-            ...
-             */
-            //Cree un programa en C# que determine si un numero es par o impar.
-            //Cree un programa en C# que determine si un numero es primo o no.
+            posicion = miDs.Tables["materias"].Rows.Count - 1;
+            mostrarDatosMateria();
         }
 
-        double sumar(double num1, double num2)
+        private void btnAnteriorMateria_Click(object sender, EventArgs e)
         {
-            return num1 + num2;
+            if (posicion > 0){
+                posicion--;
+                mostrarDatosMateria();
+            }else {
+                MessageBox.Show("Primer regisro", "Registro de Materias");
+            }
+        }
+
+        private void btnPrimeroMateria_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatosMateria();
+        }
+
+        private void btnNuevoMateria_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
