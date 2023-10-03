@@ -224,6 +224,7 @@ namespace ejercicios
             this.btnModificarMateria.TabIndex = 8;
             this.btnModificarMateria.Text = "Modificar";
             this.btnModificarMateria.UseVisualStyleBackColor = true;
+            this.btnModificarMateria.Click += new System.EventHandler(this.btnModificarMateria_Click);
             // 
             // btnNuevoMateria
             // 

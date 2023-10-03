@@ -15,12 +15,17 @@ namespace ejercicios
         Conexion objConexion = new Conexion();
         DataSet miDs = new DataSet();
         public int posicion =0;
+        String accion = "nuevo";
         public Form1()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            actualizarDs();
+        }
+        private void actualizarDs()
         {
             miDs.Clear();
             miDs = objConexion.obtenerDatos();
@@ -74,7 +79,55 @@ namespace ejercicios
 
         private void btnNuevoMateria_Click(object sender, EventArgs e)
         {
-            
+            if (btnNuevoMateria.Text == "Nuevo"){
+                btnNuevoMateria.Text = "Guardar";
+                btnModificarMateria.Text = "Cancelar";
+                estadoControles(false);
+                limpiarCajas();
+                accion = "nuevo";
+            }else {//guardar
+                String[] materia = new String[] {
+                    accion, txtCodigoMateria.Text, txtNombreMateria.Text, txtUvMateria.Text,
+                    miDs.Tables["materias"].Rows[posicion].ItemArray[0].ToString()
+                };
+                String msg = objConexion.mtoMaterias(materia);
+                actualizarDs();
+                MessageBox.Show(msg);
+                estadoControles(true);
+                btnNuevoMateria.Text = "Nuevo";
+                btnModificarMateria.Text = "Modificar";
+            }
+        }
+
+        private void btnModificarMateria_Click(object sender, EventArgs e)
+        {
+            if (btnModificarMateria.Text == "Modificar"){
+                btnNuevoMateria.Text = "Guardar";
+                btnModificarMateria.Text = "Cancelar";
+                estadoControles(false);
+                accion = "modificar";
+            }else{//cancelar
+                estadoControles(true);
+                mostrarDatosMateria();
+                btnNuevoMateria.Text = "Nuevo";
+                btnModificarMateria.Text = "Modificar";
+            }
+        }
+        private void estadoControles(Boolean estado)
+        {
+            txtCodigoMateria.ReadOnly = estado;
+            txtNombreMateria.ReadOnly = estado;
+            txtUvMateria.ReadOnly = estado;
+
+            grbNavegacionMateria.Enabled = estado;
+            btnEliminarMateria.Enabled = estado;
+            txtBuscarMaterias.ReadOnly = !estado;
+        }
+        private void limpiarCajas()
+        {
+            txtCodigoMateria.Text = "";
+            txtNombreMateria.Text = "";
+            txtUvMateria.Text = "";
         }
     }
 }
