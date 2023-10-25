@@ -20,6 +20,7 @@ namespace ejercicios
             String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academico.mdf;Integrated Security=True";
             miConexion.ConnectionString = cadenaConexion;
             miConexion.Open();
+            parametrizacion();
         }
         public DataSet obtenerDatos()
         {
@@ -36,18 +37,28 @@ namespace ejercicios
 
             return miDs;
         }
+        private void parametrizacion()
+        {
+            miComando.Parameters.Add("@id", SqlDbType.Int).Value = 0;
+            miComando.Parameters.Add("@cod", SqlDbType.Char).Value = "";
+            miComando.Parameters.Add("@nom", SqlDbType.Char).Value = "";
+            //uv = Unidades Valorativas de la tabla materias
+            miComando.Parameters.Add("@uv", SqlDbType.Int).Value = 0;
+        }
         public String mtoMaterias(String[] materia)
         {
             String sql = "";
             if (materia[0] == "nuevo") {
-                sql = "INSERT INTO materias (codigo, materia, uv) VALUES('"+materia[1]+ "', '" + materia[2] 
-                    + "', '" + materia[3] + "')";
+                sql = "INSERT INTO materias (codigo, materia, uv) VALUES(@cod, @nom, @uv)";
             }else if(materia[0] == "modificar"){
-                sql = "UPDATE materias SET codigo='" + materia[1] + "', materia='" + materia[2]
-                    + "', uv='" + materia[3] + "' WHERE idMateria='"+materia[4]+"'";
+                sql = "UPDATE materias SET codigo=@cod, materia=@nom, uv=@uv WHERE idMateria=@id";
             }else if(materia[0] == "eliminar"){
-                sql = "DELETE FROM materias WHERE idMateria='"+materia[4]+"')";
+                sql = "DELETE FROM materias WHERE idMateria=@id)";
             }
+            miComando.Parameters["@cod"].Value = materia[1];
+            miComando.Parameters["@nom"].Value = materia[2];
+            miComando.Parameters["@uv"].Value = materia[3];
+            miComando.Parameters["@id"].Value = materia[4];
             return ejecutarSql(sql);
         }
         private String ejecutarSql(String sql)
