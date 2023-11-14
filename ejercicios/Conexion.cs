@@ -20,7 +20,6 @@ namespace ejercicios
             String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academico.mdf;Integrated Security=True";
             miConexion.ConnectionString = cadenaConexion;
             miConexion.Open();
-            parametrizacion();
         }
         public DataSet obtenerDatos()
         {
@@ -37,35 +36,40 @@ namespace ejercicios
 
             return miDs;
         }
-        private void parametrizacion()
-        {
-            miComando.Parameters.Add("@id", SqlDbType.Int).Value = 0;
-            miComando.Parameters.Add("@cod", SqlDbType.Char).Value = "";
-            miComando.Parameters.Add("@nom", SqlDbType.Char).Value = "";
-            //uv = Unidades Valorativas de la tabla materias
-            miComando.Parameters.Add("@uv", SqlDbType.Int).Value = 0;
-        }
-        public String mtoMaterias(String[] materia)
+        public String mantenimientoMaterias(String[] materias)
         {
             String sql = "";
-            if (materia[0] == "nuevo") {
-                sql = "INSERT INTO materias (codigo, materia, uv) VALUES(@cod, @nom, @uv)";
-            }else if(materia[0] == "modificar"){
-                sql = "UPDATE materias SET codigo=@cod, materia=@nom, uv=@uv WHERE idMateria=@id";
-            }else if(materia[0] == "eliminar"){
-                sql = "DELETE FROM materias WHERE idMateria=@id)";
+            if (materias[0] == "nuevo"){
+                sql = "INSERT INTO materias (codigo, materia, uv) VALUES('"+materias[1]+ "', '" + materias[2] + "', '" + 
+                    materias[3] + "')";
+            } else if (materias[0] == "modificar"){
+                sql = "UPDATE materias SET codigo='" + materias[1] + "', materia='" + materias[2] + "', uv='" + materias[3] + 
+                    "' WHERE idMateria='" + materias[4] + "'";
+            } else if (materias[0] == "eliminar"){
+                sql = "DELETE FROM materias WHERE idMateria='" + materias[4] + "'";
             }
-            miComando.Parameters["@cod"].Value = materia[1];
-            miComando.Parameters["@nom"].Value = materia[2];
-            miComando.Parameters["@uv"].Value = materia[3];
-            miComando.Parameters["@id"].Value = materia[4];
             return ejecutarSql(sql);
         }
-        private String ejecutarSql(String sql)
+        public String mantenimientoAlumnos(String[] alumnos)
         {
-            try {
-                miComando.Connection = miConexion;
+            String sql = "";
+            if (alumnos[0] == "nuevo") {
+                sql = "INSERT INTO alumnos (codigo, nombre, direccion, telefono) VALUES('" + alumnos[1] + "', '" + alumnos[2] + "', '" +
+                    alumnos[3] + "', '"+ alumnos[4] +"')";
+            }else if (alumnos[0] == "modificar"){
+                sql = "UPDATE alumnos SET codigo='" + alumnos[1] + "', nombre='" + alumnos[2] + "', direccion='" + alumnos[3] +
+                    "', telefono='"+alumnos[4]+"' WHERE idAlumno='" + alumnos[5] + "'";
+            }else if (alumnos[0] == "eliminar"){
+                sql = "DELETE FROM alumnos WHERE idAlumno='" + alumnos[5] + "'";
+            }
+            return ejecutarSql(sql);
+        }
+        private string ejecutarSql(String sql)
+        {
+            try
+            {
                 miComando.CommandText = sql;
+                miComando.Connection = miConexion;
                 return miComando.ExecuteNonQuery().ToString();
             }catch(Exception e){
                 return e.Message;

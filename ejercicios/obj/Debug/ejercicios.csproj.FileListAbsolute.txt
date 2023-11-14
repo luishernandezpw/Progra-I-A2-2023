@@ -2,7 +2,6 @@ C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejercicio
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejercicios.exe
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejercicios.pdb
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csproj.AssemblyReference.cache
-C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.Form1.resources
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.Properties.Resources.resources
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csproj.GenerateResource.cache
 C:\Users\Estudiante\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csproj.CoreCompileInputs.cache
@@ -14,7 +13,6 @@ C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejerc
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejercicios.exe
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\bin\Debug\ejercicios.pdb
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csprojAssemblyReference.cache
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.Form1.resources
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.Properties.Resources.resources
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csproj.GenerateResource.cache
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.csproj.CoreCompileInputs.cache
@@ -22,27 +20,26 @@ C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejerc
 C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.pdb
 C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\bin\Debug\db_academico.mdf
 C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\bin\Debug\db_academico_log.ldf
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico.mdf
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico_log.ldf
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe.config
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.pdb
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.AssemblyReference.cache
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.Form1.resources
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.Properties.Resources.resources
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.GenerateResource.cache
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.CoreCompileInputs.cache
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.exe
-C:\Users\Estudiante\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.pdb
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico.mdf
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico_log.ldf
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe.config
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.pdb
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csprojAssemblyReference.cache
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.Form1.resources
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.Properties.Resources.resources
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.GenerateResource.cache
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.CoreCompileInputs.cache
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.exe
-C:\Users\Luis Hernandez\Source\Repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.pdb
+C:\Users\Luis Hernandez\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.principal.resources
+C:\Users\Luis Hernandez\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.materias.resources
+C:\Users\Luis Hernandez\source\repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.alumnos.resources
+C:\Users\Luis Hernandez\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.matricula.resources
+C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.alumnos.resources
+C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.materias.resources
+C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.matricula.resources
+C:\Users\Estudiante\Source\Repos\Progra-I-A1-2023\ejercicios\obj\Debug\ejercicios.principal.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico.mdf
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\bin\Debug\db_academico_log.ldf
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe.config
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.exe
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\bin\Debug\ejercicios.pdb
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.AssemblyReference.cache
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.alumnos.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.materias.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.matricula.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.principal.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.Properties.Resources.resources
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.GenerateResource.cache
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.csproj.CoreCompileInputs.cache
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.exe
+C:\Users\Estudiante\source\repos\Progra-I-A2-2023\ejercicios\obj\Debug\ejercicios.pdb
