@@ -53,15 +53,29 @@
             this.lblAlumnoMatricula = new System.Windows.Forms.Label();
             this.lblFechaMatricula = new System.Windows.Forms.Label();
             this.dtFechaMatriucla = new System.Windows.Forms.DateTimePicker();
-            this.matriculaAlumnosPeriodosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtMatriculaAlumnosPeriodosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtMatriculaAlumnosPeriodos = new ejercicios.db_academicoDataSetTableAdapters.dtMatriculaAlumnosPeriodos();
+            this.dtMatriculaAlumnosPeriodosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dtMatriculaAlumnosPeriodosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMatriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAlumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPeriodoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.periodosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_academicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnosBindingSource)).BeginInit();
             this.grbEdicionMatricula.SuspendLayout();
             this.grbNavegacionMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matriculaAlumnosPeriodosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // periodosBindingSource
@@ -109,6 +123,7 @@
             this.btnEliminarMatricula.TabIndex = 9;
             this.btnEliminarMatricula.Text = "Eliminar";
             this.btnEliminarMatricula.UseVisualStyleBackColor = true;
+            this.btnEliminarMatricula.Click += new System.EventHandler(this.btnEliminarMatricula_Click);
             // 
             // btnModificarMatricula
             // 
@@ -119,6 +134,7 @@
             this.btnModificarMatricula.TabIndex = 8;
             this.btnModificarMatricula.Text = "Modificar";
             this.btnModificarMatricula.UseVisualStyleBackColor = true;
+            this.btnModificarMatricula.Click += new System.EventHandler(this.btnModificarMatricula_Click);
             // 
             // btnNuevoMatricula
             // 
@@ -129,6 +145,7 @@
             this.btnNuevoMatricula.TabIndex = 7;
             this.btnNuevoMatricula.Text = "Nuevo";
             this.btnNuevoMatricula.UseVisualStyleBackColor = true;
+            this.btnNuevoMatricula.Click += new System.EventHandler(this.btnNuevoMatricula_Click);
             // 
             // grbNavegacionMatricula
             // 
@@ -162,6 +179,7 @@
             this.btnUltimoMatricula.TabIndex = 3;
             this.btnUltimoMatricula.Text = ">|";
             this.btnUltimoMatricula.UseVisualStyleBackColor = true;
+            this.btnUltimoMatricula.Click += new System.EventHandler(this.btnUltimoMatricula_Click);
             // 
             // btnSiguienteMatricula
             // 
@@ -172,6 +190,7 @@
             this.btnSiguienteMatricula.TabIndex = 2;
             this.btnSiguienteMatricula.Text = ">";
             this.btnSiguienteMatricula.UseVisualStyleBackColor = true;
+            this.btnSiguienteMatricula.Click += new System.EventHandler(this.btnSiguienteMatricula_Click);
             // 
             // btnAnteriorMatricula
             // 
@@ -182,6 +201,7 @@
             this.btnAnteriorMatricula.TabIndex = 1;
             this.btnAnteriorMatricula.Text = "<";
             this.btnAnteriorMatricula.UseVisualStyleBackColor = true;
+            this.btnAnteriorMatricula.Click += new System.EventHandler(this.btnAnteriorMatricula_Click);
             // 
             // btnPrimeroMatricula
             // 
@@ -192,6 +212,7 @@
             this.btnPrimeroMatricula.TabIndex = 0;
             this.btnPrimeroMatricula.Text = "|<";
             this.btnPrimeroMatricula.UseVisualStyleBackColor = true;
+            this.btnPrimeroMatricula.Click += new System.EventHandler(this.btnPrimeroMatricula_Click);
             // 
             // matriculaTableAdapter1
             // 
@@ -218,6 +239,7 @@
             // 
             // cboPeriodoMatricula
             // 
+            this.cboPeriodoMatricula.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.matriculaBindingSource, "idPeriodo", true));
             this.cboPeriodoMatricula.DataSource = this.periodosBindingSource;
             this.cboPeriodoMatricula.DisplayMember = "periodo";
             this.cboPeriodoMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -230,6 +252,7 @@
             // 
             // cboAlumnoMatricula
             // 
+            this.cboAlumnoMatricula.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.matriculaBindingSource, "idAlumno", true));
             this.cboAlumnoMatricula.DataSource = this.alumnosBindingSource;
             this.cboAlumnoMatricula.DisplayMember = "nombre";
             this.cboAlumnoMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -269,25 +292,126 @@
             // 
             // dtFechaMatriucla
             // 
+            this.dtFechaMatriucla.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.matriculaBindingSource, "fecha", true));
             this.dtFechaMatriucla.Location = new System.Drawing.Point(81, 153);
             this.dtFechaMatriucla.Name = "dtFechaMatriucla";
             this.dtFechaMatriucla.Size = new System.Drawing.Size(223, 20);
             this.dtFechaMatriucla.TabIndex = 5;
             // 
-            // matriculaAlumnosPeriodosBindingSource
+            // dtMatriculaAlumnosPeriodosBindingSource
             // 
-            this.matriculaAlumnosPeriodosBindingSource.DataMember = "matriculaAlumnosPeriodos";
-            this.matriculaAlumnosPeriodosBindingSource.DataSource = this.db_academicoDataSet;
+            this.dtMatriculaAlumnosPeriodosBindingSource.DataSource = this.db_academicoDataSet;
+            this.dtMatriculaAlumnosPeriodosBindingSource.Position = 0;
             // 
             // dtMatriculaAlumnosPeriodos
             // 
             this.dtMatriculaAlumnosPeriodos.ClearBeforeFill = true;
             // 
+            // dtMatriculaAlumnosPeriodosDataGridView
+            // 
+            this.dtMatriculaAlumnosPeriodosDataGridView.AllowUserToAddRows = false;
+            this.dtMatriculaAlumnosPeriodosDataGridView.AllowUserToDeleteRows = false;
+            this.dtMatriculaAlumnosPeriodosDataGridView.AutoGenerateColumns = false;
+            this.dtMatriculaAlumnosPeriodosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtMatriculaAlumnosPeriodosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idMatricula,
+            this.periodo,
+            this.alumno,
+            this.fecha,
+            this.idMatriculaDataGridViewTextBoxColumn,
+            this.idAlumnoDataGridViewTextBoxColumn,
+            this.idPeriodoDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.periodoDataGridViewTextBoxColumn});
+            this.dtMatriculaAlumnosPeriodosDataGridView.DataSource = this.dtMatriculaAlumnosPeriodosBindingSource1;
+            this.dtMatriculaAlumnosPeriodosDataGridView.Location = new System.Drawing.Point(350, 60);
+            this.dtMatriculaAlumnosPeriodosDataGridView.Name = "dtMatriculaAlumnosPeriodosDataGridView";
+            this.dtMatriculaAlumnosPeriodosDataGridView.ReadOnly = true;
+            this.dtMatriculaAlumnosPeriodosDataGridView.Size = new System.Drawing.Size(444, 220);
+            this.dtMatriculaAlumnosPeriodosDataGridView.TabIndex = 13;
+            // 
+            // dtMatriculaAlumnosPeriodosBindingSource1
+            // 
+            this.dtMatriculaAlumnosPeriodosBindingSource1.DataMember = "dtMatriculaAlumnosPeriodos";
+            this.dtMatriculaAlumnosPeriodosBindingSource1.DataSource = this.dtMatriculaAlumnosPeriodosBindingSource;
+            // 
+            // idMatricula
+            // 
+            this.idMatricula.DataPropertyName = "idMatricula";
+            this.idMatricula.HeaderText = "ID";
+            this.idMatricula.Name = "idMatricula";
+            this.idMatricula.ReadOnly = true;
+            // 
+            // periodo
+            // 
+            this.periodo.DataPropertyName = "periodo";
+            this.periodo.HeaderText = "Periodo";
+            this.periodo.Name = "periodo";
+            this.periodo.ReadOnly = true;
+            // 
+            // alumno
+            // 
+            this.alumno.DataPropertyName = "nombre";
+            this.alumno.HeaderText = "Alumno";
+            this.alumno.Name = "alumno";
+            this.alumno.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha";
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // idMatriculaDataGridViewTextBoxColumn
+            // 
+            this.idMatriculaDataGridViewTextBoxColumn.DataPropertyName = "idMatricula";
+            this.idMatriculaDataGridViewTextBoxColumn.HeaderText = "idMatricula";
+            this.idMatriculaDataGridViewTextBoxColumn.Name = "idMatriculaDataGridViewTextBoxColumn";
+            this.idMatriculaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idAlumnoDataGridViewTextBoxColumn
+            // 
+            this.idAlumnoDataGridViewTextBoxColumn.DataPropertyName = "idAlumno";
+            this.idAlumnoDataGridViewTextBoxColumn.HeaderText = "idAlumno";
+            this.idAlumnoDataGridViewTextBoxColumn.Name = "idAlumnoDataGridViewTextBoxColumn";
+            this.idAlumnoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idPeriodoDataGridViewTextBoxColumn
+            // 
+            this.idPeriodoDataGridViewTextBoxColumn.DataPropertyName = "idPeriodo";
+            this.idPeriodoDataGridViewTextBoxColumn.HeaderText = "idPeriodo";
+            this.idPeriodoDataGridViewTextBoxColumn.Name = "idPeriodoDataGridViewTextBoxColumn";
+            this.idPeriodoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // periodoDataGridViewTextBoxColumn
+            // 
+            this.periodoDataGridViewTextBoxColumn.DataPropertyName = "periodo";
+            this.periodoDataGridViewTextBoxColumn.HeaderText = "periodo";
+            this.periodoDataGridViewTextBoxColumn.Name = "periodoDataGridViewTextBoxColumn";
+            this.periodoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 398);
+            this.ClientSize = new System.Drawing.Size(898, 398);
+            this.Controls.Add(this.dtMatriculaAlumnosPeriodosDataGridView);
             this.Controls.Add(this.grbEdicionMatricula);
             this.Controls.Add(this.grbNavegacionMatricula);
             this.Controls.Add(this.dtFechaMatriucla);
@@ -306,7 +430,9 @@
             this.grbNavegacionMatricula.ResumeLayout(false);
             this.grbNavegacionMatricula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matriculaAlumnosPeriodosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMatriculaAlumnosPeriodosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +463,19 @@
         private System.Windows.Forms.Label lblAlumnoMatricula;
         private System.Windows.Forms.Label lblFechaMatricula;
         private System.Windows.Forms.DateTimePicker dtFechaMatriucla;
-        private System.Windows.Forms.BindingSource matriculaAlumnosPeriodosBindingSource;
+        private System.Windows.Forms.BindingSource dtMatriculaAlumnosPeriodosBindingSource;
         private db_academicoDataSetTableAdapters.dtMatriculaAlumnosPeriodos dtMatriculaAlumnosPeriodos;
+        private System.Windows.Forms.DataGridView dtMatriculaAlumnosPeriodosDataGridView;
+        private System.Windows.Forms.BindingSource dtMatriculaAlumnosPeriodosBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMatricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMatriculaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlumnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPeriodoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodoDataGridViewTextBoxColumn;
     }
 }

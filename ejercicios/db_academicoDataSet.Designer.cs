@@ -42,7 +42,7 @@ namespace ejercicios {
         
         private periodosDataTable tableperiodos;
         
-        private matriculaAlumnosPeriodosDataTable tablematriculaAlumnosPeriodos;
+        private dtMatriculaAlumnosPeriodosDataTable tabledtMatriculaAlumnosPeriodos;
         
         private global::System.Data.DataRelation relationfk_idInscripcion;
         
@@ -115,8 +115,8 @@ namespace ejercicios {
                 if ((ds.Tables["periodos"] != null)) {
                     base.Tables.Add(new periodosDataTable(ds.Tables["periodos"]));
                 }
-                if ((ds.Tables["matriculaAlumnosPeriodos"] != null)) {
-                    base.Tables.Add(new matriculaAlumnosPeriodosDataTable(ds.Tables["matriculaAlumnosPeriodos"]));
+                if ((ds.Tables["dtMatriculaAlumnosPeriodos"] != null)) {
+                    base.Tables.Add(new dtMatriculaAlumnosPeriodosDataTable(ds.Tables["dtMatriculaAlumnosPeriodos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -230,9 +230,9 @@ namespace ejercicios {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public matriculaAlumnosPeriodosDataTable matriculaAlumnosPeriodos {
+        public dtMatriculaAlumnosPeriodosDataTable dtMatriculaAlumnosPeriodos {
             get {
-                return this.tablematriculaAlumnosPeriodos;
+                return this.tabledtMatriculaAlumnosPeriodos;
             }
         }
         
@@ -330,8 +330,8 @@ namespace ejercicios {
                 if ((ds.Tables["periodos"] != null)) {
                     base.Tables.Add(new periodosDataTable(ds.Tables["periodos"]));
                 }
-                if ((ds.Tables["matriculaAlumnosPeriodos"] != null)) {
-                    base.Tables.Add(new matriculaAlumnosPeriodosDataTable(ds.Tables["matriculaAlumnosPeriodos"]));
+                if ((ds.Tables["dtMatriculaAlumnosPeriodos"] != null)) {
+                    base.Tables.Add(new dtMatriculaAlumnosPeriodosDataTable(ds.Tables["dtMatriculaAlumnosPeriodos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -420,10 +420,10 @@ namespace ejercicios {
                     this.tableperiodos.InitVars();
                 }
             }
-            this.tablematriculaAlumnosPeriodos = ((matriculaAlumnosPeriodosDataTable)(base.Tables["matriculaAlumnosPeriodos"]));
+            this.tabledtMatriculaAlumnosPeriodos = ((dtMatriculaAlumnosPeriodosDataTable)(base.Tables["dtMatriculaAlumnosPeriodos"]));
             if ((initTable == true)) {
-                if ((this.tablematriculaAlumnosPeriodos != null)) {
-                    this.tablematriculaAlumnosPeriodos.InitVars();
+                if ((this.tabledtMatriculaAlumnosPeriodos != null)) {
+                    this.tabledtMatriculaAlumnosPeriodos.InitVars();
                 }
             }
             this.relationfk_idInscripcion = this.Relations["fk_idInscripcion"];
@@ -462,8 +462,8 @@ namespace ejercicios {
             base.Tables.Add(this.tablenotas);
             this.tableperiodos = new periodosDataTable();
             base.Tables.Add(this.tableperiodos);
-            this.tablematriculaAlumnosPeriodos = new matriculaAlumnosPeriodosDataTable();
-            base.Tables.Add(this.tablematriculaAlumnosPeriodos);
+            this.tabledtMatriculaAlumnosPeriodos = new dtMatriculaAlumnosPeriodosDataTable();
+            base.Tables.Add(this.tabledtMatriculaAlumnosPeriodos);
             this.relationfk_idInscripcion = new global::System.Data.DataRelation("fk_idInscripcion", new global::System.Data.DataColumn[] {
                         this.tableinscripcion.idInscripcionColumn}, new global::System.Data.DataColumn[] {
                         this.tabledetalle_inscripcion.idInscripcionColumn}, false);
@@ -554,7 +554,7 @@ namespace ejercicios {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializematriculaAlumnosPeriodos() {
+        private bool ShouldSerializedtMatriculaAlumnosPeriodos() {
             return false;
         }
         
@@ -641,7 +641,7 @@ namespace ejercicios {
         public delegate void periodosRowChangeEventHandler(object sender, periodosRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void matriculaAlumnosPeriodosRowChangeEventHandler(object sender, matriculaAlumnosPeriodosRowChangeEvent e);
+        public delegate void dtMatriculaAlumnosPeriodosRowChangeEventHandler(object sender, dtMatriculaAlumnosPeriodosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3523,7 +3523,7 @@ namespace ejercicios {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class matriculaAlumnosPeriodosDataTable : global::System.Data.TypedTableBase<matriculaAlumnosPeriodosRow> {
+        public partial class dtMatriculaAlumnosPeriodosDataTable : global::System.Data.TypedTableBase<dtMatriculaAlumnosPeriodosRow> {
             
             private global::System.Data.DataColumn columnidMatricula;
             
@@ -3535,14 +3535,12 @@ namespace ejercicios {
             
             private global::System.Data.DataColumn columnnombre;
             
-            private global::System.Data.DataColumn columncodigo;
-            
             private global::System.Data.DataColumn columnperiodo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosDataTable() {
-                this.TableName = "matriculaAlumnosPeriodos";
+            public dtMatriculaAlumnosPeriodosDataTable() {
+                this.TableName = "dtMatriculaAlumnosPeriodos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3550,7 +3548,7 @@ namespace ejercicios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal matriculaAlumnosPeriodosDataTable(global::System.Data.DataTable table) {
+            internal dtMatriculaAlumnosPeriodosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3567,7 +3565,7 @@ namespace ejercicios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected matriculaAlumnosPeriodosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected dtMatriculaAlumnosPeriodosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3614,14 +3612,6 @@ namespace ejercicios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn codigoColumn {
-                get {
-                    return this.columncodigo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn periodoColumn {
                 get {
                     return this.columnperiodo;
@@ -3639,58 +3629,57 @@ namespace ejercicios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRow this[int index] {
+            public dtMatriculaAlumnosPeriodosRow this[int index] {
                 get {
-                    return ((matriculaAlumnosPeriodosRow)(this.Rows[index]));
+                    return ((dtMatriculaAlumnosPeriodosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event matriculaAlumnosPeriodosRowChangeEventHandler matriculaAlumnosPeriodosRowChanging;
+            public event dtMatriculaAlumnosPeriodosRowChangeEventHandler dtMatriculaAlumnosPeriodosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event matriculaAlumnosPeriodosRowChangeEventHandler matriculaAlumnosPeriodosRowChanged;
+            public event dtMatriculaAlumnosPeriodosRowChangeEventHandler dtMatriculaAlumnosPeriodosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event matriculaAlumnosPeriodosRowChangeEventHandler matriculaAlumnosPeriodosRowDeleting;
+            public event dtMatriculaAlumnosPeriodosRowChangeEventHandler dtMatriculaAlumnosPeriodosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event matriculaAlumnosPeriodosRowChangeEventHandler matriculaAlumnosPeriodosRowDeleted;
+            public event dtMatriculaAlumnosPeriodosRowChangeEventHandler dtMatriculaAlumnosPeriodosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddmatriculaAlumnosPeriodosRow(matriculaAlumnosPeriodosRow row) {
+            public void AdddtMatriculaAlumnosPeriodosRow(dtMatriculaAlumnosPeriodosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRow AddmatriculaAlumnosPeriodosRow(int idAlumno, int idPeriodo, System.DateTime fecha, string nombre, string codigo, string periodo) {
-                matriculaAlumnosPeriodosRow rowmatriculaAlumnosPeriodosRow = ((matriculaAlumnosPeriodosRow)(this.NewRow()));
+            public dtMatriculaAlumnosPeriodosRow AdddtMatriculaAlumnosPeriodosRow(int idAlumno, int idPeriodo, System.DateTime fecha, string nombre, string periodo) {
+                dtMatriculaAlumnosPeriodosRow rowdtMatriculaAlumnosPeriodosRow = ((dtMatriculaAlumnosPeriodosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         idAlumno,
                         idPeriodo,
                         fecha,
                         nombre,
-                        codigo,
                         periodo};
-                rowmatriculaAlumnosPeriodosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowmatriculaAlumnosPeriodosRow);
-                return rowmatriculaAlumnosPeriodosRow;
+                rowdtMatriculaAlumnosPeriodosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtMatriculaAlumnosPeriodosRow);
+                return rowdtMatriculaAlumnosPeriodosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRow FindByidMatricula(int idMatricula) {
-                return ((matriculaAlumnosPeriodosRow)(this.Rows.Find(new object[] {
+            public dtMatriculaAlumnosPeriodosRow FindByidMatricula(int idMatricula) {
+                return ((dtMatriculaAlumnosPeriodosRow)(this.Rows.Find(new object[] {
                             idMatricula})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                matriculaAlumnosPeriodosDataTable cln = ((matriculaAlumnosPeriodosDataTable)(base.Clone()));
+                dtMatriculaAlumnosPeriodosDataTable cln = ((dtMatriculaAlumnosPeriodosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3698,7 +3687,7 @@ namespace ejercicios {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new matriculaAlumnosPeriodosDataTable();
+                return new dtMatriculaAlumnosPeriodosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3709,7 +3698,6 @@ namespace ejercicios {
                 this.columnidPeriodo = base.Columns["idPeriodo"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnnombre = base.Columns["nombre"];
-                this.columncodigo = base.Columns["codigo"];
                 this.columnperiodo = base.Columns["periodo"];
             }
             
@@ -3726,8 +3714,6 @@ namespace ejercicios {
                 base.Columns.Add(this.columnfecha);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo);
                 this.columnperiodo = new global::System.Data.DataColumn("periodo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnperiodo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -3743,36 +3729,34 @@ namespace ejercicios {
                 this.columnfecha.AllowDBNull = false;
                 this.columnnombre.AllowDBNull = false;
                 this.columnnombre.MaxLength = 75;
-                this.columncodigo.AllowDBNull = false;
-                this.columncodigo.MaxLength = 10;
                 this.columnperiodo.AllowDBNull = false;
                 this.columnperiodo.MaxLength = 25;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRow NewmatriculaAlumnosPeriodosRow() {
-                return ((matriculaAlumnosPeriodosRow)(this.NewRow()));
+            public dtMatriculaAlumnosPeriodosRow NewdtMatriculaAlumnosPeriodosRow() {
+                return ((dtMatriculaAlumnosPeriodosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new matriculaAlumnosPeriodosRow(builder);
+                return new dtMatriculaAlumnosPeriodosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(matriculaAlumnosPeriodosRow);
+                return typeof(dtMatriculaAlumnosPeriodosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.matriculaAlumnosPeriodosRowChanged != null)) {
-                    this.matriculaAlumnosPeriodosRowChanged(this, new matriculaAlumnosPeriodosRowChangeEvent(((matriculaAlumnosPeriodosRow)(e.Row)), e.Action));
+                if ((this.dtMatriculaAlumnosPeriodosRowChanged != null)) {
+                    this.dtMatriculaAlumnosPeriodosRowChanged(this, new dtMatriculaAlumnosPeriodosRowChangeEvent(((dtMatriculaAlumnosPeriodosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3780,8 +3764,8 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.matriculaAlumnosPeriodosRowChanging != null)) {
-                    this.matriculaAlumnosPeriodosRowChanging(this, new matriculaAlumnosPeriodosRowChangeEvent(((matriculaAlumnosPeriodosRow)(e.Row)), e.Action));
+                if ((this.dtMatriculaAlumnosPeriodosRowChanging != null)) {
+                    this.dtMatriculaAlumnosPeriodosRowChanging(this, new dtMatriculaAlumnosPeriodosRowChangeEvent(((dtMatriculaAlumnosPeriodosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3789,8 +3773,8 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.matriculaAlumnosPeriodosRowDeleted != null)) {
-                    this.matriculaAlumnosPeriodosRowDeleted(this, new matriculaAlumnosPeriodosRowChangeEvent(((matriculaAlumnosPeriodosRow)(e.Row)), e.Action));
+                if ((this.dtMatriculaAlumnosPeriodosRowDeleted != null)) {
+                    this.dtMatriculaAlumnosPeriodosRowDeleted(this, new dtMatriculaAlumnosPeriodosRowChangeEvent(((dtMatriculaAlumnosPeriodosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3798,14 +3782,14 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.matriculaAlumnosPeriodosRowDeleting != null)) {
-                    this.matriculaAlumnosPeriodosRowDeleting(this, new matriculaAlumnosPeriodosRowChangeEvent(((matriculaAlumnosPeriodosRow)(e.Row)), e.Action));
+                if ((this.dtMatriculaAlumnosPeriodosRowDeleting != null)) {
+                    this.dtMatriculaAlumnosPeriodosRowDeleting(this, new dtMatriculaAlumnosPeriodosRowChangeEvent(((dtMatriculaAlumnosPeriodosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovematriculaAlumnosPeriodosRow(matriculaAlumnosPeriodosRow row) {
+            public void RemovedtMatriculaAlumnosPeriodosRow(dtMatriculaAlumnosPeriodosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3832,7 +3816,7 @@ namespace ejercicios {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "matriculaAlumnosPeriodosDataTable";
+                attribute2.FixedValue = "dtMatriculaAlumnosPeriodosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4853,25 +4837,25 @@ namespace ejercicios {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class matriculaAlumnosPeriodosRow : global::System.Data.DataRow {
+        public partial class dtMatriculaAlumnosPeriodosRow : global::System.Data.DataRow {
             
-            private matriculaAlumnosPeriodosDataTable tablematriculaAlumnosPeriodos;
+            private dtMatriculaAlumnosPeriodosDataTable tabledtMatriculaAlumnosPeriodos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal matriculaAlumnosPeriodosRow(global::System.Data.DataRowBuilder rb) : 
+            internal dtMatriculaAlumnosPeriodosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablematriculaAlumnosPeriodos = ((matriculaAlumnosPeriodosDataTable)(this.Table));
+                this.tabledtMatriculaAlumnosPeriodos = ((dtMatriculaAlumnosPeriodosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int idMatricula {
                 get {
-                    return ((int)(this[this.tablematriculaAlumnosPeriodos.idMatriculaColumn]));
+                    return ((int)(this[this.tabledtMatriculaAlumnosPeriodos.idMatriculaColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.idMatriculaColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.idMatriculaColumn] = value;
                 }
             }
             
@@ -4879,10 +4863,10 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int idAlumno {
                 get {
-                    return ((int)(this[this.tablematriculaAlumnosPeriodos.idAlumnoColumn]));
+                    return ((int)(this[this.tabledtMatriculaAlumnosPeriodos.idAlumnoColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.idAlumnoColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.idAlumnoColumn] = value;
                 }
             }
             
@@ -4890,10 +4874,10 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int idPeriodo {
                 get {
-                    return ((int)(this[this.tablematriculaAlumnosPeriodos.idPeriodoColumn]));
+                    return ((int)(this[this.tabledtMatriculaAlumnosPeriodos.idPeriodoColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.idPeriodoColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.idPeriodoColumn] = value;
                 }
             }
             
@@ -4901,10 +4885,10 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime fecha {
                 get {
-                    return ((global::System.DateTime)(this[this.tablematriculaAlumnosPeriodos.fechaColumn]));
+                    return ((global::System.DateTime)(this[this.tabledtMatriculaAlumnosPeriodos.fechaColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.fechaColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.fechaColumn] = value;
                 }
             }
             
@@ -4912,21 +4896,10 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nombre {
                 get {
-                    return ((string)(this[this.tablematriculaAlumnosPeriodos.nombreColumn]));
+                    return ((string)(this[this.tabledtMatriculaAlumnosPeriodos.nombreColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string codigo {
-                get {
-                    return ((string)(this[this.tablematriculaAlumnosPeriodos.codigoColumn]));
-                }
-                set {
-                    this[this.tablematriculaAlumnosPeriodos.codigoColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.nombreColumn] = value;
                 }
             }
             
@@ -4934,10 +4907,10 @@ namespace ejercicios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string periodo {
                 get {
-                    return ((string)(this[this.tablematriculaAlumnosPeriodos.periodoColumn]));
+                    return ((string)(this[this.tabledtMatriculaAlumnosPeriodos.periodoColumn]));
                 }
                 set {
-                    this[this.tablematriculaAlumnosPeriodos.periodoColumn] = value;
+                    this[this.tabledtMatriculaAlumnosPeriodos.periodoColumn] = value;
                 }
             }
         }
@@ -5252,22 +5225,22 @@ namespace ejercicios {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class matriculaAlumnosPeriodosRowChangeEvent : global::System.EventArgs {
+        public class dtMatriculaAlumnosPeriodosRowChangeEvent : global::System.EventArgs {
             
-            private matriculaAlumnosPeriodosRow eventRow;
+            private dtMatriculaAlumnosPeriodosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRowChangeEvent(matriculaAlumnosPeriodosRow row, global::System.Data.DataRowAction action) {
+            public dtMatriculaAlumnosPeriodosRowChangeEvent(dtMatriculaAlumnosPeriodosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public matriculaAlumnosPeriodosRow Row {
+            public dtMatriculaAlumnosPeriodosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8803,13 +8776,12 @@ SELECT idPeriodo, fecha, periodo FROM periodos WHERE (idPeriodo = @idPeriodo)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "matriculaAlumnosPeriodos";
+            tableMapping.DataSetTable = "dtMatriculaAlumnosPeriodos";
             tableMapping.ColumnMappings.Add("idMatricula", "idMatricula");
             tableMapping.ColumnMappings.Add("idAlumno", "idAlumno");
             tableMapping.ColumnMappings.Add("idPeriodo", "idPeriodo");
             tableMapping.ColumnMappings.Add("fecha", "fecha");
             tableMapping.ColumnMappings.Add("nombre", "nombre");
-            tableMapping.ColumnMappings.Add("codigo", "codigo");
             tableMapping.ColumnMappings.Add("periodo", "periodo");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -8827,7 +8799,7 @@ SELECT idPeriodo, fecha, periodo FROM periodos WHERE (idPeriodo = @idPeriodo)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, alumnos.codigo, periodos.periodo
+            this._commandCollection[0].CommandText = @"SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, periodos.periodo
 FROM            matricula INNER JOIN
                          alumnos ON matricula.idAlumno = alumnos.idAlumno INNER JOIN
                          periodos ON matricula.idPeriodo = periodos.idPeriodo";
@@ -8838,7 +8810,7 @@ FROM            matricula INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_academicoDataSet.matriculaAlumnosPeriodosDataTable dataTable) {
+        public virtual int Fill(db_academicoDataSet.dtMatriculaAlumnosPeriodosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8851,9 +8823,9 @@ FROM            matricula INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_academicoDataSet.matriculaAlumnosPeriodosDataTable GetData() {
+        public virtual db_academicoDataSet.dtMatriculaAlumnosPeriodosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            db_academicoDataSet.matriculaAlumnosPeriodosDataTable dataTable = new db_academicoDataSet.matriculaAlumnosPeriodosDataTable();
+            db_academicoDataSet.dtMatriculaAlumnosPeriodosDataTable dataTable = new db_academicoDataSet.dtMatriculaAlumnosPeriodosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -574,12 +574,12 @@ SELECT idPeriodo, fecha, periodo FROM periodos WHERE (idPeriodo = @idPeriodo)</C
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtMatriculaAlumnosPeriodos" GeneratorDataComponentClassName="dtMatriculaAlumnosPeriodos" Name="matriculaAlumnosPeriodos" UserDataComponentName="dtMatriculaAlumnosPeriodos">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtMatriculaAlumnosPeriodos" GeneratorDataComponentClassName="dtMatriculaAlumnosPeriodos" Name="dtMatriculaAlumnosPeriodos" UserDataComponentName="dtMatriculaAlumnosPeriodos">
             <MainSource>
               <DbSource ConnectionRef="db_academicoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, alumnos.codigo, periodos.periodo
+                    <CommandText>SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, periodos.periodo
 FROM            matricula INNER JOIN
                          alumnos ON matricula.idAlumno = alumnos.idAlumno INNER JOIN
                          periodos ON matricula.idPeriodo = periodos.idPeriodo</CommandText>
@@ -594,7 +594,6 @@ FROM            matricula INNER JOIN
               <Mapping SourceColumn="idPeriodo" DataSetColumn="idPeriodo" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
-              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
               <Mapping SourceColumn="periodo" DataSetColumn="periodo" />
             </Mappings>
             <Sources />
@@ -763,7 +762,7 @@ FROM            matricula INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="matriculaAlumnosPeriodos" msprop:Generator_TableClassName="matriculaAlumnosPeriodosDataTable" msprop:Generator_TableVarName="tablematriculaAlumnosPeriodos" msprop:Generator_TablePropName="matriculaAlumnosPeriodos" msprop:Generator_RowDeletingName="matriculaAlumnosPeriodosRowDeleting" msprop:Generator_RowChangingName="matriculaAlumnosPeriodosRowChanging" msprop:Generator_RowEvHandlerName="matriculaAlumnosPeriodosRowChangeEventHandler" msprop:Generator_RowDeletedName="matriculaAlumnosPeriodosRowDeleted" msprop:Generator_UserTableName="matriculaAlumnosPeriodos" msprop:Generator_RowChangedName="matriculaAlumnosPeriodosRowChanged" msprop:Generator_RowEvArgName="matriculaAlumnosPeriodosRowChangeEvent" msprop:Generator_RowClassName="matriculaAlumnosPeriodosRow">
+        <xs:element name="dtMatriculaAlumnosPeriodos" msprop:Generator_TableClassName="dtMatriculaAlumnosPeriodosDataTable" msprop:Generator_TableVarName="tabledtMatriculaAlumnosPeriodos" msprop:Generator_TablePropName="dtMatriculaAlumnosPeriodos" msprop:Generator_RowDeletingName="dtMatriculaAlumnosPeriodosRowDeleting" msprop:Generator_RowChangingName="dtMatriculaAlumnosPeriodosRowChanging" msprop:Generator_RowEvHandlerName="dtMatriculaAlumnosPeriodosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMatriculaAlumnosPeriodosRowDeleted" msprop:Generator_UserTableName="dtMatriculaAlumnosPeriodos" msprop:Generator_RowChangedName="dtMatriculaAlumnosPeriodosRowChanged" msprop:Generator_RowEvArgName="dtMatriculaAlumnosPeriodosRowChangeEvent" msprop:Generator_RowClassName="dtMatriculaAlumnosPeriodosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idMatricula" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMatricula" msprop:Generator_ColumnPropNameInRow="idMatricula" msprop:Generator_ColumnPropNameInTable="idMatriculaColumn" msprop:Generator_UserColumnName="idMatricula" type="xs:int" />
@@ -774,13 +773,6 @@ FROM            matricula INNER JOIN
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -832,8 +824,8 @@ FROM            matricula INNER JOIN
       <xs:selector xpath=".//mstns:periodos" />
       <xs:field xpath="mstns:idPeriodo" />
     </xs:unique>
-    <xs:unique name="matriculaAlumnosPeriodos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:matriculaAlumnosPeriodos" />
+    <xs:unique name="dtMatriculaAlumnosPeriodos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtMatriculaAlumnosPeriodos" />
       <xs:field xpath="mstns:idMatricula" />
     </xs:unique>
   </xs:element>

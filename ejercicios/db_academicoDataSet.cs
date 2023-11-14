@@ -9,3 +9,12 @@
         }
     }
 }
+
+namespace ejercicios.db_academicoDataSetTableAdapters
+{
+
+
+    public partial class dtMatriculaAlumnosPeriodos
+    {
+    }
+}
