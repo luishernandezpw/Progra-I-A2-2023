@@ -21,7 +21,11 @@ namespace ejercicios
 
         private void inscripcion_Load(object sender, EventArgs e)
         {
-             // TODO: esta línea de código carga datos en la tabla 'db_academicoDataSet.dInscripcionMateria' Puede moverla o quitarla según sea necesario.
+            actualizarDs();
+        }
+        private void actualizarDs()
+        {
+            // TODO: esta línea de código carga datos en la tabla 'db_academicoDataSet.dInscripcionMateria' Puede moverla o quitarla según sea necesario.
             this.dtDetalleInscripcionMateria.Fill(this.db_academicoDataSet.dInscripcionMateria);
             // TODO: esta línea de código carga datos en la tabla 'db_academicoDataSet.alumnos' Puede moverla o quitarla según sea necesario.
             this.alumnosTableAdapter.Fill(this.db_academicoDataSet.alumnos);
@@ -30,7 +34,6 @@ namespace ejercicios
 
             nRegistroInscripcion();
         }
-
         private void nRegistroInscripcion()
         {
             lblnRegistroInscripcion.Text = (inscripcionMatriculaPeridoBindingSource.Position + 1) + " de " + inscripcionMatriculaPeridoBindingSource.Count;
@@ -89,7 +92,33 @@ namespace ejercicios
                     SqlCommand miCommand = new SqlCommand();
                     miCommand.Connection = inscripcionMatriculaPeridoTableAdapter.Connection;
 
-                    
+                    miCommand.CommandText = "SELECT MAX(idMatricula) AS idMatricula FROM matricula WHERE idAlumno='"+
+                        idAlumnoComboBox.SelectedValue+"'";
+                    int _idMatricula = int.Parse(miCommand.ExecuteScalar().ToString());
+
+                    if( int.Parse(idInscripcionTextBox.Text)<=0) {//nuevo
+                        miCommand.CommandText = "INSERT INTO inscripcion (idMatricula, fecha) VALUES('" + _idMatricula + "', '" + 
+                            fechaDateTimePicker.Value.ToShortDateString() + "')";
+                        miCommand.ExecuteNonQuery();
+
+                        miCommand.CommandText = "SELECT ident_current('inscripcion') AS idInscripcion";
+                        _idInscripcion = int.Parse(miCommand.ExecuteScalar().ToString());
+                        
+                    }else{//modificacion
+                        _idInscripcion = int.Parse(idInscripcionTextBox.Text);
+                        miCommand.CommandText = "UPDATE inscripcion SET idMatricula='"+ _idMatricula 
+                            +"', fecha='"+fechaDateTimePicker.Value.ToShortDateString()+"' WHER idInscripcion='"+ _idInscripcion +"'";
+
+                        miCommand.CommandText = "DELETE FROM detalle_inscripcion WHERE idInscripcion='" + _idInscripcion + "'";
+                        miCommand.ExecuteNonQuery();
+                    }
+                    inscripcionMatriculaPeridoTableAdapter.Connection.Close();
+                    int nfilas = dInscripcionMateriaDataGridView.Rows.Count;
+                    for (int i = 0; i < nfilas; i++) {
+                        detalle_inscripcionTableAdapter.Insert(_idInscripcion,
+                            int.Parse(dInscripcionMateriaDataGridView.Rows[i].Cells["idMateria"].Value.ToString()));
+                    }
+                    actualizarDs();
                     btnNuevoInscripcion.Text = "Nuevo";
                     btnModificarInscripcion.Text = "Modificar";
                     estadoControles(false);

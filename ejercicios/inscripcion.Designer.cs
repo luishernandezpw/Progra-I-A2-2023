@@ -64,6 +64,7 @@
             this.tableAdapterManager = new ejercicios.db_academicoDataSetTableAdapters.TableAdapterManager();
             this.alumnosTableAdapter = new ejercicios.db_academicoDataSetTableAdapters.alumnosTableAdapter();
             this.dtDetalleInscripcionMateria = new ejercicios.db_academicoDataSetTableAdapters.dtDetalleInscripcionMateria();
+            this.detalle_inscripcionTableAdapter = new ejercicios.db_academicoDataSetTableAdapters.detalle_inscripcionTableAdapter();
             idInscripcionLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idAlumnoLabel = new System.Windows.Forms.Label();
@@ -405,6 +406,10 @@
             // 
             this.dtDetalleInscripcionMateria.ClearBeforeFill = true;
             // 
+            // detalle_inscripcionTableAdapter
+            // 
+            this.detalle_inscripcionTableAdapter.ClearBeforeFill = true;
+            // 
             // inscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,5 +477,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn uv;
+        private db_academicoDataSetTableAdapters.detalle_inscripcionTableAdapter detalle_inscripcionTableAdapter;
     }
 }
