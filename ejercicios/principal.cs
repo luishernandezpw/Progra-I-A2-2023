@@ -42,5 +42,12 @@ namespace ejercicios
             objMatricula.MdiParent = this;
             objMatricula.Show();
         }
+
+        private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inscripcion objInscripcion = new inscripcion();
+            objInscripcion.MdiParent = this;
+            objInscripcion.Show();
+        }
     }
 }

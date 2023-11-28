@@ -15,7 +15,13 @@ namespace ejercicios
         Conexion objConexion = new Conexion();
         DataSet miDs = new DataSet();
         DataTable miTabla = new DataTable();
-        public int posicion =0;
+
+        public int _idMateria = 0;
+        public String _codigo = "";
+        public String _materia = "";
+        public int _uv = 0;
+
+        private int posicion =0;
         String accion = "nuevo";
         public materias()
         {
@@ -167,7 +173,12 @@ namespace ejercicios
         }
         private void seleccionarMateria()
         {
-            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
+            _idMateria = int.Parse(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString());
+            _codigo = grdDatosMaterias.CurrentRow.Cells["codigo"].Value.ToString();
+            _materia = grdDatosMaterias.CurrentRow.Cells["nombre"].Value.ToString();
+            _uv = int.Parse(grdDatosMaterias.CurrentRow.Cells["uv"].Value.ToString());
+
+            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(_idMateria.ToString()));
             mostrarDatosMateria();
         }
 

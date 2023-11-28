@@ -60,7 +60,7 @@ namespace ejercicios
         {
             if (miTabla.Rows.Count>0)
             {
- txtCodigoAlumno.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
+            txtCodigoAlumno.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
             txtNombreAlumno.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
             txtDireccionAlumno.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
             txtTelefonoAlumno.Text = miTabla.Rows[posicion].ItemArray[4].ToString();

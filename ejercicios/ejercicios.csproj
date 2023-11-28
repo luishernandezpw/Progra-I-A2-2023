@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_academicoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="inscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inscripcion.Designer.cs">
+      <DependentUpon>inscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="materias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="alumnos.resx">
       <DependentUpon>alumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inscripcion.resx">
+      <DependentUpon>inscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="materias.resx">
       <DependentUpon>materias.cs</DependentUpon>

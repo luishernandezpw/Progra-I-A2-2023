@@ -36,10 +36,10 @@
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnxSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,12 +109,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
-            // notasToolStripMenuItem
-            // 
-            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
-            this.notasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.notasToolStripMenuItem.Text = "Notas";
-            // 
             // matriculaToolStripMenuItem
             // 
             this.matriculaToolStripMenuItem.Name = "matriculaToolStripMenuItem";
@@ -127,11 +121,18 @@
             this.inscripcionToolStripMenuItem.Name = "inscripcionToolStripMenuItem";
             this.inscripcionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscripcionToolStripMenuItem.Text = "Inscripcion";
+            this.inscripcionToolStripMenuItem.Click += new System.EventHandler(this.inscripcionToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notasToolStripMenuItem.Text = "Notas";
             // 
             // principal
             // 

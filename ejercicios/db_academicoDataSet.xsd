@@ -574,12 +574,12 @@ SELECT idPeriodo, fecha, periodo FROM periodos WHERE (idPeriodo = @idPeriodo)</C
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtMatriculaAlumnosPeriodos" GeneratorDataComponentClassName="dtMatriculaAlumnosPeriodos" Name="dtMatriculaAlumnosPeriodos" UserDataComponentName="dtMatriculaAlumnosPeriodos">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtMatriculaAlumnosPeriodos" GeneratorDataComponentClassName="dtMatriculaAlumnosPeriodos" Name="matriculaAlumnosPeriodos" UserDataComponentName="dtMatriculaAlumnosPeriodos">
             <MainSource>
               <DbSource ConnectionRef="db_academicoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, periodos.periodo
+                    <CommandText>SELECT        matricula.idMatricula, matricula.idAlumno, matricula.idPeriodo, matricula.fecha, alumnos.nombre, alumnos.codigo, periodos.periodo
 FROM            matricula INNER JOIN
                          alumnos ON matricula.idAlumno = alumnos.idAlumno INNER JOIN
                          periodos ON matricula.idPeriodo = periodos.idPeriodo</CommandText>
@@ -594,6 +594,54 @@ FROM            matricula INNER JOIN
               <Mapping SourceColumn="idPeriodo" DataSetColumn="idPeriodo" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
+              <Mapping SourceColumn="periodo" DataSetColumn="periodo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtDetalleInscripcionMateria" GeneratorDataComponentClassName="dtDetalleInscripcionMateria" Name="dInscripcionMateria" UserDataComponentName="dtDetalleInscripcionMateria">
+            <MainSource>
+              <DbSource ConnectionRef="db_academicoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        detalle_inscripcion.idDetalle, detalle_inscripcion.idInscripcion, detalle_inscripcion.idMateria, materias.codigo, materias.materia, materias.uv
+FROM            detalle_inscripcion INNER JOIN
+                         materias ON detalle_inscripcion.idMateria = materias.idMateria</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idDetalle" DataSetColumn="idDetalle" />
+              <Mapping SourceColumn="idInscripcion" DataSetColumn="idInscripcion" />
+              <Mapping SourceColumn="idMateria" DataSetColumn="idMateria" />
+              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
+              <Mapping SourceColumn="materia" DataSetColumn="materia" />
+              <Mapping SourceColumn="uv" DataSetColumn="uv" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="inscripcionMatriculaPeridoTableAdapter" GeneratorDataComponentClassName="inscripcionMatriculaPeridoTableAdapter" Name="inscripcionMatriculaPerido" UserDataComponentName="inscripcionMatriculaPeridoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_academicoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        inscripcion.idInscripcion, inscripcion.idMatricula, inscripcion.fecha, matricula.idAlumno, matricula.idPeriodo, periodos.periodo
+FROM            inscripcion INNER JOIN
+                         matricula ON inscripcion.idMatricula = matricula.idMatricula INNER JOIN
+                         periodos ON matricula.idPeriodo = periodos.idPeriodo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idInscripcion" DataSetColumn="idInscripcion" />
+              <Mapping SourceColumn="idMatricula" DataSetColumn="idMatricula" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="idAlumno" DataSetColumn="idAlumno" />
+              <Mapping SourceColumn="idPeriodo" DataSetColumn="idPeriodo" />
               <Mapping SourceColumn="periodo" DataSetColumn="periodo" />
             </Mappings>
             <Sources />
@@ -762,7 +810,7 @@ FROM            matricula INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtMatriculaAlumnosPeriodos" msprop:Generator_TableClassName="dtMatriculaAlumnosPeriodosDataTable" msprop:Generator_TableVarName="tabledtMatriculaAlumnosPeriodos" msprop:Generator_TablePropName="dtMatriculaAlumnosPeriodos" msprop:Generator_RowDeletingName="dtMatriculaAlumnosPeriodosRowDeleting" msprop:Generator_RowChangingName="dtMatriculaAlumnosPeriodosRowChanging" msprop:Generator_RowEvHandlerName="dtMatriculaAlumnosPeriodosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMatriculaAlumnosPeriodosRowDeleted" msprop:Generator_UserTableName="dtMatriculaAlumnosPeriodos" msprop:Generator_RowChangedName="dtMatriculaAlumnosPeriodosRowChanged" msprop:Generator_RowEvArgName="dtMatriculaAlumnosPeriodosRowChangeEvent" msprop:Generator_RowClassName="dtMatriculaAlumnosPeriodosRow">
+        <xs:element name="matriculaAlumnosPeriodos" msprop:Generator_TableClassName="matriculaAlumnosPeriodosDataTable" msprop:Generator_TableVarName="tablematriculaAlumnosPeriodos" msprop:Generator_TablePropName="matriculaAlumnosPeriodos" msprop:Generator_RowDeletingName="matriculaAlumnosPeriodosRowDeleting" msprop:Generator_RowChangingName="matriculaAlumnosPeriodosRowChanging" msprop:Generator_RowEvHandlerName="matriculaAlumnosPeriodosRowChangeEventHandler" msprop:Generator_RowDeletedName="matriculaAlumnosPeriodosRowDeleted" msprop:Generator_UserTableName="matriculaAlumnosPeriodos" msprop:Generator_RowChangedName="matriculaAlumnosPeriodosRowChanged" msprop:Generator_RowEvArgName="matriculaAlumnosPeriodosRowChangeEvent" msprop:Generator_RowClassName="matriculaAlumnosPeriodosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idMatricula" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMatricula" msprop:Generator_ColumnPropNameInRow="idMatricula" msprop:Generator_ColumnPropNameInTable="idMatriculaColumn" msprop:Generator_UserColumnName="idMatricula" type="xs:int" />
@@ -776,6 +824,49 @@ FROM            matricula INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="periodo" msprop:Generator_ColumnVarNameInTable="columnperiodo" msprop:Generator_ColumnPropNameInRow="periodo" msprop:Generator_ColumnPropNameInTable="periodoColumn" msprop:Generator_UserColumnName="periodo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dInscripcionMateria" msprop:Generator_TableClassName="dInscripcionMateriaDataTable" msprop:Generator_TableVarName="tabledInscripcionMateria" msprop:Generator_RowChangedName="dInscripcionMateriaRowChanged" msprop:Generator_TablePropName="dInscripcionMateria" msprop:Generator_RowDeletingName="dInscripcionMateriaRowDeleting" msprop:Generator_RowChangingName="dInscripcionMateriaRowChanging" msprop:Generator_RowEvHandlerName="dInscripcionMateriaRowChangeEventHandler" msprop:Generator_RowDeletedName="dInscripcionMateriaRowDeleted" msprop:Generator_RowClassName="dInscripcionMateriaRow" msprop:Generator_UserTableName="dInscripcionMateria" msprop:Generator_RowEvArgName="dInscripcionMateriaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
+              <xs:element name="idInscripcion" msprop:Generator_ColumnVarNameInTable="columnidInscripcion" msprop:Generator_ColumnPropNameInRow="idInscripcion" msprop:Generator_ColumnPropNameInTable="idInscripcionColumn" msprop:Generator_UserColumnName="idInscripcion" type="xs:int" />
+              <xs:element name="idMateria" msprop:Generator_ColumnVarNameInTable="columnidMateria" msprop:Generator_ColumnPropNameInRow="idMateria" msprop:Generator_ColumnPropNameInTable="idMateriaColumn" msprop:Generator_UserColumnName="idMateria" type="xs:int" />
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" />
+              <xs:element name="materia" msprop:Generator_ColumnVarNameInTable="columnmateria" msprop:Generator_ColumnPropNameInRow="materia" msprop:Generator_ColumnPropNameInTable="materiaColumn" msprop:Generator_UserColumnName="materia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="uv" msprop:Generator_ColumnVarNameInTable="columnuv" msprop:Generator_ColumnPropNameInRow="uv" msprop:Generator_ColumnPropNameInTable="uvColumn" msprop:Generator_UserColumnName="uv" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="inscripcionMatriculaPerido" msprop:Generator_TableClassName="inscripcionMatriculaPeridoDataTable" msprop:Generator_TableVarName="tableinscripcionMatriculaPerido" msprop:Generator_TablePropName="inscripcionMatriculaPerido" msprop:Generator_RowDeletingName="inscripcionMatriculaPeridoRowDeleting" msprop:Generator_RowChangingName="inscripcionMatriculaPeridoRowChanging" msprop:Generator_RowEvHandlerName="inscripcionMatriculaPeridoRowChangeEventHandler" msprop:Generator_RowDeletedName="inscripcionMatriculaPeridoRowDeleted" msprop:Generator_UserTableName="inscripcionMatriculaPerido" msprop:Generator_RowChangedName="inscripcionMatriculaPeridoRowChanged" msprop:Generator_RowEvArgName="inscripcionMatriculaPeridoRowChangeEvent" msprop:Generator_RowClassName="inscripcionMatriculaPeridoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idInscripcion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidInscripcion" msprop:Generator_ColumnPropNameInRow="idInscripcion" msprop:Generator_ColumnPropNameInTable="idInscripcionColumn" msprop:Generator_UserColumnName="idInscripcion" type="xs:int" />
+              <xs:element name="idMatricula" msprop:Generator_ColumnVarNameInTable="columnidMatricula" msprop:Generator_ColumnPropNameInRow="idMatricula" msprop:Generator_ColumnPropNameInTable="idMatriculaColumn" msprop:Generator_UserColumnName="idMatricula" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="idAlumno" msprop:Generator_ColumnVarNameInTable="columnidAlumno" msprop:Generator_ColumnPropNameInRow="idAlumno" msprop:Generator_ColumnPropNameInTable="idAlumnoColumn" msprop:Generator_UserColumnName="idAlumno" type="xs:int" />
+              <xs:element name="idPeriodo" msprop:Generator_ColumnVarNameInTable="columnidPeriodo" msprop:Generator_ColumnPropNameInRow="idPeriodo" msprop:Generator_ColumnPropNameInTable="idPeriodoColumn" msprop:Generator_UserColumnName="idPeriodo" type="xs:int" />
               <xs:element name="periodo" msprop:Generator_ColumnVarNameInTable="columnperiodo" msprop:Generator_ColumnPropNameInRow="periodo" msprop:Generator_ColumnPropNameInTable="periodoColumn" msprop:Generator_UserColumnName="periodo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -824,9 +915,17 @@ FROM            matricula INNER JOIN
       <xs:selector xpath=".//mstns:periodos" />
       <xs:field xpath="mstns:idPeriodo" />
     </xs:unique>
-    <xs:unique name="dtMatriculaAlumnosPeriodos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:dtMatriculaAlumnosPeriodos" />
+    <xs:unique name="matriculaAlumnosPeriodos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:matriculaAlumnosPeriodos" />
       <xs:field xpath="mstns:idMatricula" />
+    </xs:unique>
+    <xs:unique name="dInscripcionMateria_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dInscripcionMateria" />
+      <xs:field xpath="mstns:idDetalle" />
+    </xs:unique>
+    <xs:unique name="inscripcionMatriculaPerido_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:inscripcionMatriculaPerido" />
+      <xs:field xpath="mstns:idInscripcion" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
@@ -839,6 +938,7 @@ FROM            matricula INNER JOIN
       <msdata:Relationship name="fk_idAlumno" msdata:parent="alumnos" msdata:child="matricula" msdata:parentkey="idAlumno" msdata:childkey="idAlumno" msprop:Generator_UserChildTable="matricula" msprop:Generator_ChildPropName="GetmatriculaRows" msprop:Generator_UserRelationName="fk_idAlumno" msprop:Generator_RelationVarName="relationfk_idAlumno" msprop:Generator_UserParentTable="alumnos" msprop:Generator_ParentPropName="alumnosRow" />
       <msdata:Relationship name="fk_idPeriodo" msdata:parent="periodos" msdata:child="matricula" msdata:parentkey="idPeriodo" msdata:childkey="idPeriodo" msprop:Generator_UserChildTable="matricula" msprop:Generator_ChildPropName="GetmatriculaRows" msprop:Generator_UserRelationName="fk_idPeriodo" msprop:Generator_ParentPropName="periodosRow" msprop:Generator_RelationVarName="relationfk_idPeriodo" msprop:Generator_UserParentTable="periodos" />
       <msdata:Relationship name="fk_notas_idInscripcion" msdata:parent="inscripcion" msdata:child="notas" msdata:parentkey="idInscripcion" msdata:childkey="idInscripcion" msprop:Generator_UserChildTable="notas" msprop:Generator_ChildPropName="GetnotasRows" msprop:Generator_UserRelationName="fk_notas_idInscripcion" msprop:Generator_RelationVarName="relationfk_notas_idInscripcion" msprop:Generator_UserParentTable="inscripcion" msprop:Generator_ParentPropName="inscripcionRow" />
+      <msdata:Relationship name="inscripcionMatriculaPerido_dInscripcionMateria" msdata:parent="inscripcionMatriculaPerido" msdata:child="dInscripcionMateria" msdata:parentkey="idInscripcion" msdata:childkey="idInscripcion" msprop:Generator_UserChildTable="dInscripcionMateria" msprop:Generator_ChildPropName="GetdInscripcionMateriaRows" msprop:Generator_UserRelationName="inscripcionMatriculaPerido_dInscripcionMateria" msprop:Generator_RelationVarName="relationinscripcionMatriculaPerido_dInscripcionMateria" msprop:Generator_UserParentTable="inscripcionMatriculaPerido" msprop:Generator_ParentPropName="inscripcionMatriculaPeridoRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
